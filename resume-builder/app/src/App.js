@@ -21,6 +21,9 @@ import ShowTemplate from "./Components/ShowTemplate";
 import EmployeeInfo from "./Components/EmployeeInfo";
 import EmployeeExperience from "./Components/EmployeeExperience";
 import EmployeeEducation from "./Components/EmployeeEducation";
+import EmployeeSkills from "./Components/EmployeeSkills";
+import EmployeeInterests from "./Components/EmployeeInterests";
+import Resume from "./Components/Resume";
 
 function App() {
 
@@ -43,8 +46,12 @@ function App() {
        return <EmployeeEducation />;
 
       // Task 13: Add employee skills case here
+      case 3:
+       return <EmployeeSkills />;
 
       // Task 15: Add employee interests case here
+      case 4:
+        return <EmployeeInterests />;
 
       default:
         break;
@@ -61,12 +68,14 @@ function App() {
             <Grid item md={8} lg={8} sm={12}>
               {renderForms(activeStep)}
             </Grid>
-          <Grid item md={4} lg={4} sm={12} xs={12}>
+           <Grid item md={4} lg={4} sm={12} xs={12}>
             <ShowTemplate />
-          </Grid>
+           </Grid>
+ 
           </Grid>
         ) : (
           <Grid container>
+            <Resume />
           </Grid>
         )}
       </Container>
